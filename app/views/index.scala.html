@@ -1,0 +1,56 @@
+@()
+@main("Todo List Sample") {
+    <script type="application/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
+
+    <h2>Play Framework 2.4 and Slick 3.1.0 REST API Sample</h2>
+    <p>
+        This sample shows basic usage of Play 2.4 and combination of Slick 3.1.0 and following features:
+        This application has simple RESTful APIs for CRUD actions and all action runs asynchronously.
+        This application tested by property based testing using ScalaTest and ScalaCheck.
+    </p>
+    <ul>
+        <li>RESTful APIs for CRUD actions</li>
+        <li>Asynchronous controller</li>
+        <li>Play 2.4 Dependency Injection</li>
+        <li>CoffeeScript Asset Compiler</li>
+        <li>Property-based testing based on ScalaTest and ScalaCheck</li>
+        <li>UI/UX (bootstrap, jQuery)</li>
+    </ul>
+
+
+    <h2>Add Task</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="task-name">Task Name</label>
+                <input type="text" class="form-control" id="task-name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="due-date">Due Date</label>
+                <div class="input-group date" >
+                    <input class="form-control" id="due-date"/>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="add-task-button">Add Task</button>
+            <div class="alert alert-warning hide" id="warn-message">Please input correctly.</div>
+        </div>
+    </div>
+
+    <h2>Current Tasks</h2>
+    <input type="checkbox" id="show-only-not-done-check" /> Show only tasks not done yet
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <thead>
+                    <th class="col-md-2">Status</th>
+                    <th>Name</th>
+                    <th class="col-md-3">Due Date</th>
+                    <th>Action</th>
+                </thead>
+                <tbody id="task-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
